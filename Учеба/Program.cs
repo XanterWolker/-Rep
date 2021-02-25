@@ -15,10 +15,11 @@ namespace Учеба
 
             for (int i = 0; i < a[8]; i++)
             {
-                if (a[0] < a[1])
+                if (a[i] < a[i+1])
                 {
-                    min = a;
+                    min = a[i];
                 }
+                Console.WriteLine(min);
             }
         }
 
