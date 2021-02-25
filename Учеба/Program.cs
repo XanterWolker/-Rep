@@ -37,16 +37,26 @@ namespace Учеба
             int[] arr = new int[] { 5, 12, 13, 2, 1, 9, 15, 19, 6 };
 
             int max = arr[0];
-            int max2 = arr[0];
-
-            for (int i = 0; i < arr.Length; i++)
+            int max2 = arr[1];
+           
+            for (int i = 2; i < arr.Length; i++)
             {
                 if (max < arr[i])
                 {
+                    max2 = max;
                     max = arr[i];
-                    max2 = arr[i - 1];
+                   
                 }
+
+                if (max2 < arr[i] && arr[i] != max)
+                {
+                    max2 = arr[i];
+                }
+
             }
+
+             
+
             Console.WriteLine(max);
             Console.WriteLine(max2);
         }
