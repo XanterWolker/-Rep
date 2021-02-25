@@ -6,13 +6,18 @@ namespace Учеба
     {
         static void Main(string[] args)
         {
-            int num = 20;
+           /* int num = 20;
            num =+ 5;
             Console.WriteLine( "Переменная:" + num);
+           */
 
+           
 
+            double num = 1.4234;
+            double cub = Math.Pow(num, 3);
+            cub = Math.Round(cub);
 
-            
+            Console.WriteLine(cub);
         }
     }
 }
