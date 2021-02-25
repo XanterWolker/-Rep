@@ -6,8 +6,36 @@ namespace Учеба
     {
         static void Main(string[] args)
         {
-            int[] oneDimmension = new int[10];
-            double[] doubleArray = { 1.5, 22.11, 9.99 };
+            Console.WriteLine("Vvedite n");
+            int n 
+
+            int[,] z = new int[5, 5];
+
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    z[i, j] = (i + 1) * (j + 1);
+                }
+            }
+            
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Write($"\t{i+1}");
+            }
+            Console.WriteLine();
+
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Write($"{i + 1}");
+                for (int j = 0; j < 5; j++)
+                {
+                    Console.Write($"\t{z[j,i]}");
+                }
+                Console.WriteLine();
+            }
+            Console.ReadLine();
+
         }
     }
 }
