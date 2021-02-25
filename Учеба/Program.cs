@@ -4,23 +4,29 @@ namespace Учеба
 {
     class Program
     {
+
+        static void Main(string[] args)
+        {
+            Task2();
+        }
         /// <summary>
         /// Найти минимальный элемент массива
         /// </summary>
         public static void Task1()
         {
-            int[] a = new int[] { 5, 12, 13, 2, 1, 9, 15, 19, 6 };
+            int[] arr = new int[] { 5, 12, 13, 2, 1, 9, 15, 19, 6 };
 
-            int min = 0;
+            int min = arr[0];
 
-            for (int i = 0; i < a[8]; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-                if (a[i] < a[i+1])
+                if (min > arr[i])
                 {
-                    min = a[i];
+                    min = arr[i];
                 }
-                Console.WriteLine(min);
+
             }
+            Console.WriteLine(min);
         }
 
         /// <summary>
@@ -28,7 +34,21 @@ namespace Учеба
         /// </summary>
         public static void Task2()
         {
-            int[] a = new int[] { 5, 12, 13, 2, 1, 9, 15, 19, 6 };
+            int[] arr = new int[] { 5, 12, 13, 2, 1, 9, 15, 19, 6 };
+
+            int max = arr[0];
+            int max2 = arr[0];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (max < arr[i])
+                {
+                    max = arr[i];
+                    max2 = arr[i - 1];
+                }
+            }
+            Console.WriteLine(max);
+            Console.WriteLine(max2);
         }
 
         /// <summary>
