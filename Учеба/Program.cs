@@ -7,7 +7,7 @@ namespace Учеба
         static void Main(string[] args)
         {
             Console.WriteLine("Vvedite n");
-            int n 
+            int n = Convert.ToInt32(Console.ReadLine);
 
             int[,] z = new int[5, 5];
 
