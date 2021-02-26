@@ -7,7 +7,7 @@ namespace Учеба
 
         static void Main(string[] args)
         {
-            Task2();
+            Task3();
         }
         /// <summary>
         /// Найти минимальный элемент массива
@@ -66,7 +66,19 @@ namespace Учеба
         /// </summary>
         public static void Task3()
         {
-            int[] a = new int[] { 5, 12, 13, 2, 1, 9, 15, 19, 6 };
+            int[] arr = new int[] { 5, 12, 13, 2, 1, 9, 15, 19, 6 };
+
+            int sum = 0;
+            
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum = sum + arr[i];
+                
+                Console.WriteLine(sum);
+            }
+            
+
         }
 
         /// <summary>
