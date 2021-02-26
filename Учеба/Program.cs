@@ -7,7 +7,7 @@ namespace Учеба
 
         static void Main(string[] args)
         {
-            Task4();
+            Task5();
         }
         /// <summary>
         /// Найти минимальный элемент массива
@@ -101,8 +101,19 @@ namespace Учеба
         public static void Task5()
         {
             //пример вызова генератора случайных чисел, он понадобится в данной задаче
+            int[] arr = new int[10];
+
             Random rnd = new Random();
-            int r = rnd.Next(1, 10);//случайное число от 1 до 10
+            ;//случайное число от 1 до 10
+            for (int i = 0; i < arr.Length; i++)
+            {
+                int r = rnd.Next(1, 10);
+                arr[i] = r;
+
+                Console.WriteLine(arr[i]);
+            }
+
+            
         }
 
         /// <summary>
