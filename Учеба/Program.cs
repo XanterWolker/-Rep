@@ -7,190 +7,47 @@ namespace Учеба
 
         static void Main(string[] args)
         {
-            Task6();
-        }
-        /// <summary>
-        /// Найти минимальный элемент массива
-        /// </summary>
-        public static void Task1()
-        {
-            int[] arr = new int[] { 5, 12, 13, 2, 1, 9, 15, 19, 6 };
-
-            int min = arr[0];
-
-            for (int i = 0; i < arr.Length; i++)
+            float[] C = new float[] { 1, 10, 5, 20, 9, 0, 6, 2, 9, 1 };
+            float[] P = new float[] { 10, 3, 1, 50, 3, 70, 10, 9, 11, 7 };
+            float pSum = 0;
+            for (int i = 0; i < P.Length; ++i)
             {
-                if (min > arr[i])
-                {
-                    min = arr[i];
-                }
-
+                pSum += P[i];//сумма массива Р
             }
-            Console.WriteLine(min);
-        }
-
-        /// <summary>
-        /// Найти два наибольших элемента массива
-        /// </summary>
-        public static void Task2()
-        {
-            int[] arr = new int[] { 5, 12, 13, 2, 1, 9, 15, 19, 6 };
-
-            int max = arr[0];
-            int max2 = arr[1];
-           
-            for (int i = 2; i < arr.Length; i++)
+            int k = 0;
+            for (int i = 0; i < C.Length; ++i)
             {
-                if (max < arr[i])
+                if (pSum < C[i])
                 {
-                    max2 = max;
-                    max = arr[i];
-                   
-                }
-
-                if (max2 < arr[i] && arr[i] != max)
-                {
-                    max2 = arr[i];
-                }
-
-            }
-
-             
-
-            Console.WriteLine(max);
-            Console.WriteLine(max2);
-        }
-
-        /// <summary>
-        /// Посчитать сумму элементов массива
-        /// </summary>
-        public static void Task3()
-        {
-            int[] arr = new int[] { 5, 12, 13, 2, 1, 9, 15, 19, 6 };
-
-            int sum = 0;
-            
-
-            for (int i = 0; i < arr.Length; i++)
-            {
-                sum = sum + arr[i];
-                
-                Console.WriteLine(sum);
-            }
-            
-
-        }
-
-        /// <summary>
-        /// Заполнить массив по возрастанию от 1 до 100
-        /// </summary>
-        public static void Task4()
-        {
-            int[] arr = new int[101];
-            for (int i = 1; i < arr.Length; i++)
-            {
-                
-                arr[i] = i;
-                Console.WriteLine(arr[i]);
-            }
-        }
-
-        /// <summary>
-        /// Создать и заполнить массив случайными целыми числами
-        /// </summary>
-        public static void Task5()
-        {
-            //пример вызова генератора случайных чисел, он понадобится в данной задаче
-            int[] arr = new int[10];
-
-            Random rnd = new Random();
-            ;//случайное число от 1 до 10
-            for (int i = 0; i < arr.Length; i++)
-            {
-                int r = rnd.Next(1, 10);
-                arr[i] = r;
-
-                Console.WriteLine(arr[i]);
-            }
-
-            
-        }
-
-        /// <summary>
-        /// Проверить, что в массиве нет одинаковых чисел
-        /// </summary>
-        public static void Task6()
-        {
-            int[] arr = new int[] { 5, 12, 13, 2, 1, 9, 15, 19, 6 };
-            bool result = false;
-            
-            for (int i = 0; i < arr.Length; i++)
-            {
-                for (int j = i + 1; j < arr.Length; j++)
-                {
-                    if (arr[i] == arr[j])
-                    {
-                        result = true;
-                        break;
-                    }
-                   
-                }
-                if (result)
-                {
+                    k++;//переменная счетчик для проверки массива
                     break;
                 }
             }
-            Console.WriteLine(result);
-
+            if (k == 1)
+            {
+                Console.WriteLine("Не выполняется условие задачи");
+            }
+            else
+            {
+                float max = 0;
+                int x = 0;
+                int y = 0;
+                for (int i = 0; i < P.Length; ++i)
+                {
+                    for (int j = 0; j < C.Length; ++j)
+                    {
+                        float f = (C[i] / (P[j] + C[i] * C[i]));
+                        if (f > max)
+                        {
+                            max = f;
+                            x = i;
+                            y = j;
+                        }
+                    }
+                }
+                Console.WriteLine("i = " + x + " j = " + y);
+            }
         }
-
-        /// <summary>
-        /// Переставить элементы массива в обратном порядке используя вспомогательный массив
-        /// </summary>
-        public static void Task7()
-        {
-            int[] a = new int[] { 5, 12, 13, 2, 1, 9, 15, 19, 6 };
-        }
-
-        /// <summary>
-        /// Переставить элементы массива в обратном порядке НЕ используя вспомогательный массив
-        /// </summary>
-        public static void Task8()
-        {
-            int[] a = new int[] { 5, 12, 13, 2, 1, 9, 15, 19, 6 };
-        }
-
-        /// <summary>
-        /// Подсчитать сумму чисел в двухмерном массиве
-        /// </summary>
-        public static void Task9()
-        {
-            int[,] m = new int[,] { { 11, 22, 31 }, { 4, 53, 6 }, { 7, 81, 90 } };
-        }
-
-        /// <summary>
-        /// Заполнить двумерный массив 10 на 10 случайными числами от 1 до 9 и вывести на экран консоли
-        /// </summary>
-        public static void Task10()
-        {
-        }
-
-        /// <summary>
-        /// Двумерный массив скопировать в одномерный
-        /// </summary>
-        public static void Task11()
-        {
-            int[,] m = new int[,] { { 11, 22, 31 }, { 4, 53, 6 }, { 7, 81, 90 } };
-        }
-
-
-        /// <summary>
-        /// Заполнить двумерный массив 10 на 10 случайными числами от 1 до 99 и определить количество четных чисел в массиве
-        /// </summary>
-        public static void Task12()
-        {
-            //подсказка: для определения остатка от деления используется оператор %
-            int ostatok = 4 % 2; //будет равен нулю
-        }
+        
     }
 }
